@@ -42,7 +42,7 @@ function populate_initial_data() {
 
     echo "FILE_NAME: $RELEASE_NOTES_FILE"
 
-    git add "$RELEASE_NOTES_FILE"
+    git add "$RELEASE_NOTES_FILE_NAME"
     git commit -m "build: populate release notes"
     git push
 
