@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RELEASE_NOTES_FILE="../$RELEASE_NOTES_FILE_NAME"
+RELEASE_NOTES_FILE="$RELEASE_NOTES_FILE_NAME"
 GITHUB_TOKEN="$GITHUB_TOKEN"
 GITHUB_REPOSITORY="$GITHUB_REPOSITORY"
 
@@ -30,6 +30,8 @@ function process_git_log() {
             pr_description=$(fetch_pr_description "$pr_id")
             echo "PR ID: $pr_id" >> "$log_file"
             echo "PR Description: $pr_description" >> "$log_file"
+            echo "PR ID: $pr_id"
+            echo "PR Description: $pr_description"
         fi
     done < "temp_file"
 }
