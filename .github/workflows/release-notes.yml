@@ -1,0 +1,25 @@
+name: Release Notes
+
+on:
+  # Triggers the workflow on pull request events on testing branch
+  pull_request:
+    types: [opened, edited, synchronize]
+    branches: [ release_notes_master ]
+
+  workflow_dispatch:
+
+jobs:
+  generate-release-notes:
+    runs-on: ubuntu-latest
+    name: Generate Release Notes
+    env:
+      RELEASE_NOTES_FILE_NAME: RELEASE_NOTES.md
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Populate initial release notes
+        run: ./release-notes-scripts/1-populate_release_notes.sh
+        env:
+          RELEASE_NOTES_FILE_NAME: $RELEASE_NOTES_FILE_NAME
+          GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
