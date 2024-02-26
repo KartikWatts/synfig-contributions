@@ -44,6 +44,7 @@ function populate_initial_data() {
         rm temp_file
     fi
 
+    ls -la
     git add .
     git commit -m "build: populate release notes"
     git push
