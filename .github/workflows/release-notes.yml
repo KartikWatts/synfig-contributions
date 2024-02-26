@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate Release Notes
     steps:
-      # - uses: actions/checkout@v4
-      # - run: |
-      #     git config user.name KartikWatts
-      #     git config user.email arorakartik4@gmail.com
+      - uses: actions/checkout@v4
+      - run: |
+          git config user.name KartikWatts
+          git config user.email arorakartik4@gmail.com
 
       - name: Populate initial release notes
         run: ./release-notes-scripts/1-populate_release_notes.sh
