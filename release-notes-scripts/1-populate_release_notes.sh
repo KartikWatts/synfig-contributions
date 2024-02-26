@@ -40,15 +40,13 @@ function populate_initial_data() {
 
     process_git_log "$RELEASE_NOTES_FILE"
 
-    echo "FILE_NAME: $RELEASE_NOTES_FILE"
-
-    git add "$RELEASE_NOTES_FILE_NAME"
-    git commit -m "build: populate release notes"
-    git push
-
     if [ -f "temp_file" ]; then
         rm temp_file
     fi
+
+    git add .
+    git commit -m "build: populate release notes"
+    git push
 
 }
 
