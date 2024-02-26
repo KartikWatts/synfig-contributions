@@ -6,9 +6,9 @@ on:
     types: [opened, edited, synchronize]
     branches: [ release_notes_master ]
 
-  push:
-    branches:
-      - 'build/draft-branch-for-automating-release-notes'
+  # push:
+  #   branches:
+  #     - 'build/draft-branch-for-automating-release-notes'
 
   workflow_dispatch:
 
