@@ -49,7 +49,7 @@ function populate_initial_data() {
     ls -la
     git add .
     git commit -m "build: populate release notes"
-    git push
+    git push origin build/draft-branch-for-automating-release-notes
 
 }
 
