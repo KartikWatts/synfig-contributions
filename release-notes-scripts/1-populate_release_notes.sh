@@ -39,6 +39,10 @@ function populate_initial_data() {
     touch "$RELEASE_NOTES_FILE"
 
     process_git_log "$RELEASE_NOTES_FILE"
+
+    git add $log_file
+    git commit -m "populate release notes"
+    git push
 }
 
 function main() {
