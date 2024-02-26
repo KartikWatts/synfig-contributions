@@ -23,7 +23,7 @@ function extract_pr_id() {
 function process_git_log() {
     local log_file="$1"
     touch "temp_file"
-    git log --pretty=format:"%s" --merges --first-parent --max-count=20 > "temp_file"
+    git log --pretty=format:"%s" --merges --first-parent --max-count=2 > "temp_file"
     while IFS= read -r commit_message; do
         pr_id=$(extract_pr_id "$commit_message")
         if [ -n "$pr_id" ]; then
@@ -40,9 +40,16 @@ function populate_initial_data() {
 
     process_git_log "$RELEASE_NOTES_FILE"
 
-    git add $log_file
-    git commit -m "populate release notes"
+    echo "FILE_NAME: $RELEASE_NOTES_FILE"
+
+    git add "$RELEASE_NOTES_FILE"
+    git commit -m "build: populate release notes"
     git push
+
+    if [ -f "temp_file" ]; then
+        rm temp_file
+    fi
+
 }
 
 function main() {
