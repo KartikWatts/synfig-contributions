@@ -18,6 +18,8 @@ jobs:
     name: Generate Release Notes
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
       - run: |
           git config user.name KartikWatts
           git config user.email arorakartik4@gmail.com
