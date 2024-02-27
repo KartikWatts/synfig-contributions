@@ -33,4 +33,4 @@ jobs:
       
       - name: Testing Git
         run: |
-          echo "$(git log --pretty=format:"%s" --merges --first-parent --max-count=2)"
+          git --no-pager log -1 --pretty=format:'%s'
