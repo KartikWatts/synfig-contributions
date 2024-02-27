@@ -31,9 +31,9 @@ jobs:
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Testing Git
-        run: |
-          touch test
-          git add test
-          git commit -m "test"
-          git push
+      # - name: Testing Git
+      #   run: |
+      #     touch test
+      #     git add test
+      #     git commit -m "test"
+      #     git push
