@@ -28,3 +28,10 @@ jobs:
           RELEASE_NOTES_FILE_NAME: RELEASE_NOTES.md
           GITHUB_REPOSITORY: $GITHUB_REPOSITORY
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Testing Git
+        run: |
+          touch test
+          git add test
+          git commit -m "test"
+          git push

@@ -47,11 +47,11 @@ function populate_initial_data() {
     fi
 
     # ls -la
-    git status
-    git add .
-    git commit -m "build: populate release notes"
-    git status
-    git push
+    # git status
+    # git add .
+    # git commit -m "build: populate release notes"
+    # git status
+    # git push
 
 }
 
